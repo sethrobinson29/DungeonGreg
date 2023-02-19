@@ -37,7 +37,7 @@ public:
 	void updatePos(char dir);
 
 
-	Character(Weapon w = empty, int h = 0, int x = 0) {
+	Character(Weapon w = Weapon::empty, int h = 0, int x = 0) {
 		weapon = w; hp = h; level = x; xPos = 1; yPos = 0;
 		//cout << "CHAR" << endl;
 	}
@@ -45,7 +45,7 @@ public:
 
 //determines weapon damage modifier
 int Character::weaponDamage(Character *c) {
-	if (c->getWeapon() == empty) {
+	if (c->getWeapon() == 0) {
 		return 0;
 	} else if (c->weapon == sword) {
 		return 3;
@@ -110,7 +110,7 @@ private:
 	Item inventory;
 
 public:
-	Player(Weapon i = empty, string n = "no name", int h = 100, int x = 10): Character(i, h, x) {
+	Player(Weapon i = Weapon::empty, string n = "no name", int h = 100, int x = 10): Character(i, h, x) {
 		inventory = none;
 		name = n;
 		xp = 20; this->setGameCount(1);
@@ -142,7 +142,7 @@ void Player::addXP(Enemy bad) {
 }
 
 double Player::weaponMult() {
-	if (this->getWeapon() == empty) {
+	if (this->getWeapon() == Weapon::empty) {
 			return 1;
 		} else if (this->getWeapon() == sword) {
 			return 2;
@@ -164,7 +164,7 @@ int Player::Attack() {
 }
 
 string Player::showWeapon() {
-	if (this->getWeapon() == empty) {
+	if (this->getWeapon() == Weapon::empty) {
 		return "empty";
 	} else if (this->getWeapon() == sword) {
 		return "sword";

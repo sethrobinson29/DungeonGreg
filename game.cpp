@@ -81,7 +81,7 @@ Player makePlayer() {
 		i = staff;
 		break;
 	case 4:
-		i = empty;
+		i = Weapon::empty;
 		break;
 	}
 	Player p(i, name, hp, xp);
@@ -99,7 +99,7 @@ Enemy* spawnEnemy(int depth, int gameCount) {
 	 * if statements used to increase or decrease enemy level by manually increasing hp
 	 */
 	if (depth <= 2) {
-		bad = new Enemy(empty, 30, 1*gameCount);
+		bad = new Enemy(Weapon::empty, 30, 1*gameCount);
 		cout << "************************\n";
 		cout << "Enemy has arrived!\n\n";
 
@@ -301,7 +301,7 @@ Player enterDungeon(Dungeon d, Player p) {
 
 int main() {
 	bool exit = false;
-	Player user(empty, "greg", 25, 1); 																			//default player
+	Player user(Weapon::empty, "greg", 25, 1); 																			//default player
 
 	while (!exit) {
 		int gameCount = user.getGameCount();																	//newgame+
@@ -358,7 +358,7 @@ int main() {
 			} else if (x == 3) {
 				user.setWeapon(staff);
 			}else if (x == 4) {
-				user.setWeapon(empty);
+				user.setWeapon(Weapon::empty);
 			} else {
 				continue;
 			}

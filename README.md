@@ -1,6 +1,13 @@
 # DungeonGreg
 A quick, console-based game I made over Winter 2021 break. 
 
+# Use makefile for compilation
+1) Navigate to directory containing files
+
+2) Run make
+
+3) Run greg
+
 	||-----------------------------------------------------||
 	||-----------------------------------------------------||
 	||------------------- How To Play ---------------------||
